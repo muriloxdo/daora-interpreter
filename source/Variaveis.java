@@ -56,8 +56,12 @@ public class Variaveis{
 			int i = Integer.parseInt(valor);
 			
 			mapaVariaveis.put(var,i);
+
+			int tst=mapaVariaveis.get(var);
+
+			System.out.println(tst);
 		} catch (NumberFormatException e) {
-			System.out.println("Numero com formato errado!");
+			System.out.println("Numero com formato errado! "+e);
 
 		}
 	}
