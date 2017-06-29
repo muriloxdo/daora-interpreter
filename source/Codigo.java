@@ -35,6 +35,8 @@ public class Codigo{
 
 			case "o":
 
+			case default: /*ve se é uma variavel*/
+
 			break;
 		}
 

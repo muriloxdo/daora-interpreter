@@ -4,6 +4,20 @@ import java.util.TreeMap;
 public class Variaveis{
 	Map<String, Integer> mapaVariaveis = new TreeMap<String, Integer>();
 
+
+	/*
+	public void buscaValores(String linha)
+    -- descobre se é uma criação
+        se for uma criação: criaVar
+    -- descobre se é uma atualização
+        se for uma atualização: var
+    -- senão catch exceção
+	*/
+
+    /*
+    public atualiza(nome var, valor)
+    */
+
 	public String criaVar(String linha){
 		String recebe,var,separado [];
 		try{
@@ -37,5 +51,8 @@ public class Variaveis{
 			return var;
 		}
 	}
+
+
+
 
 }
