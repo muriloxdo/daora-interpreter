@@ -2,7 +2,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Codigo{
-	Map<String, Integer> mapaLinhas = new TreeMap<String, Integer>();
+	private Map<String, Integer> mapaLinhas = new TreeMap<String, Integer>(); //armazena todas as linhas (??)
+    private Recursao pilhaRecursao = new pilhaRecursao();   //armazena a pilha de recursao
+
 
 	public String compara(String linha, int nLinhas){
 		String var="a",token,restoToken;
@@ -31,9 +33,18 @@ public class Codigo{
 				}
 			break;
             
-            
-			case "i":
+            //endWhile
+			case "i"://ainda falta reconhecer o comando
+                     //assumi que tava feito rs
+                     
+                    /*isso aqui tem que virar codigo*/
 
+                    //se a condição do while for verdadeira
+                    //empilha a linha no while
+                    pilhaRecursao.newWhileStatement(nLinhas);
+
+                    // e se se a condição do while não for verdadeira?                                           
+                        
 			break;
 
 			case "o":

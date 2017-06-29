@@ -3,24 +3,26 @@ import java.util.Stack;
 public Class Recursao{
 
 	private Stack pilhaIf<String>;
-	private Stack pilhaWhile<String>;
+	private Stack pilhaWhile<Integer>;
 	
 
-	public newIfStatement( String comp ){
+	public void newIfStatement( String comp ){
 	//e se o comp é falso?
 		pilhaIf.push(comp);
 	}
 
-	public endIfStatement( ){
+	public String endIfStatement( ){
 		pilhaIf.pop(); 
 	}
-
-	public newWhileStatement( String comp ){
-		pilhaWhile.push(comp)
+	
+	//empilha a linha do código em que ta a condição do while
+	public void newWhileStatement( Integer conditionLine ){
+		pilhaWhile.push(conditionLine)
 	}
 
-	public endWhileStatement( ){
-		pilhaWhile.pop();
+	//desempilha a linha do while
+	public Integer endWhileStatement( ){
+		return pilhaWhile.pop();
 	}
 
 
