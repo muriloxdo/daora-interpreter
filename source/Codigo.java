@@ -31,6 +31,11 @@ public class Codigo{
 					System.out.println("while ");
 					return var;
 				}
+                //se a condição do while for verdadeira
+                //empilha a linha no while
+                pilhaRecursao.newWhileStatement(nLinhas);
+
+                // e se se a condição do while não for verdadeira?    
 			break;
             
             //endWhile
@@ -38,14 +43,9 @@ public class Codigo{
                      //assumi que tava feito rs
                      
                     /*isso aqui tem que virar codigo*/
-
-                    //se a condição do while for verdadeira
-                    //empilha a linha no while
-                    pilhaRecursao.newWhileStatement(nLinhas);
-
-                    // e se se a condição do while não for verdadeira?                                           
-                        
-			break;
+                    Integer lineWhile = pilhaRecursao.coditionLine();
+                                           
+			        break;
 
 			case "o":
 

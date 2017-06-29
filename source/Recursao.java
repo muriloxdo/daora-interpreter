@@ -25,5 +25,9 @@ public Class Recursao{
 		return pilhaWhile.pop();
 	}
 
+	public Integer conditionLine(){
+		return pilhaWhile.peek();
+	}
+
 
 }
