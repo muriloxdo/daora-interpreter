@@ -17,6 +17,39 @@ public class Variaveis{
     /*
     public atualiza(nome var, valor)
     */
+    
+    //recebe uma string com a expressão aritmética que deve ser resolvida. Ex: "a * b", "1 + b", "2 / 6".
+    public Integer arithmeticExpression( String exp ){
+        
+        String[] splitted = exp.split("[+-*/]");     //splita pelos símbolos possíveis
+        int op1, op2;
+
+        //considerando que a expressão só pode ter dois operandos
+        //você pode aumentar isso
+ 
+        //pega o valor do primeiro operando
+        try{
+            op1 = mapaVariaveis.get(splitted[0]);
+
+        }catch(NullPointerException b){
+
+            try{
+                Integer.parseInt(splitted[0]);
+
+            }catch(NumberFormatException e){
+                System.out.println("indefined value of"+splitted[0]);              
+            }
+        }
+
+        //falta fazer a mesma coisa para o operador 2 (op2)
+
+        //calcular o resultado da operação
+
+        //retorna o resultado
+        return 0;
+
+    }
+
 
 	public void criaVar(String linha){
 		String recebe,var,separado [];
