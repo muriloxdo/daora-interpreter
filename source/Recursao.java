@@ -1,9 +1,9 @@
 import java.util.Stack;
 
-public Class Recursao{
+public class Recursao{
 
-	private Stack pilhaIf<String>;
-	private Stack pilhaWhile<Integer>;
+	private Stack<String> pilhaIf;
+	private Stack<Integer> pilhaWhile;
 	
 
 	public void newIfStatement( String comp ){
@@ -12,12 +12,12 @@ public Class Recursao{
 	}
 
 	public String endIfStatement( ){
-		pilhaIf.pop(); 
+		return pilhaIf.pop(); 
 	}
 	
 	//empilha a linha do código em que ta a condição do while
 	public void newWhileStatement( Integer conditionLine ){
-		pilhaWhile.push(conditionLine)
+		pilhaWhile.push(conditionLine);
 	}
 
 	//desempilha a linha do while
@@ -25,6 +25,7 @@ public Class Recursao{
 		return pilhaWhile.pop();
 	}
 
+	//linha em que está a condição do ultimo while
 	public Integer conditionLine(){
 		return pilhaWhile.peek();
 	}

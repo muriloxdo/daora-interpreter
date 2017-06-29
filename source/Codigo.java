@@ -3,7 +3,7 @@ import java.util.TreeMap;
 
 public class Codigo{
 	private Map<String, Integer> mapaLinhas = new TreeMap<String, Integer>(); //armazena todas as linhas (??)
-    private Recursao pilhaRecursao = new pilhaRecursao();   //armazena a pilha de recursao
+    private Recursao pilhaRecursao = new Recursao();   //armazena a pilha de recursao
 
 
 	public String compara(String linha, int nLinhas){
@@ -43,13 +43,18 @@ public class Codigo{
                      //assumi que tava feito rs
                      
                     /*isso aqui tem que virar codigo*/
-                    Integer lineWhile = pilhaRecursao.coditionLine();
+                    Integer lineWhile = pilhaRecursao.conditionLine();
+                
+                    //se a condição da linha for verdadeira
+
+                
                                            
 			        break;
 
 			case "o":
+            break;
 
-			case default: /*ve se é uma variavel*/
+			default: /*ve se é uma variavel*/
 
 			break;
 		}
