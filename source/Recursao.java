@@ -2,8 +2,8 @@ import java.util.Stack;
 
 public class Recursao{
 
-	private Stack<String> pilhaIf;
-	private Stack<Integer> pilhaWhile;
+	private Stack<String> pilhaIf;    //pilha pro if
+	private Stack<Integer> pilhaWhile;	//pilha pro while
 	
 
 	public void newIfStatement( String comp ){
