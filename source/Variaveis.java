@@ -18,46 +18,47 @@ public class Variaveis{
     public atualiza(nome var, valor)
     */
 
-	public String criaVar(String linha){
+	public void criaVar(String linha){
 		String recebe,var,separado [];
 		try{
 			separado = linha.split("#");
 			var = separado[1];
-			System.out.println("var antes "+var);
-
 			separado = var.split("=");
 			var = separado[0];
-			System.out.println("var despois "+var);
-
 
 			if(var.equals("")){
-				System.out.println("Deu pau "+var);
-				return var;
+				System.out.println("Deu pau ");
 			}else if(!var.equals("")){
-				//if(recebe.)
-				separado = linha.split("#");
-				recebe = separado[1];
-				System.out.println("recebe antes "+recebe);
+				if(linha.contains("=")){
+					separado = linha.split("#");
+					recebe = separado[1];
+					separado = recebe.split("=");
+					recebe = separado[1];
 
-				separado = recebe.split("=");
-				recebe = separado[1];
-				System.out.println("recebe depois "+recebe);
 					if(!recebe.equals("")){
-						System.out.println("Var: "+var);
-						System.out.println("\nrecebe "+(int)recebe.charAt(0));
+						stringToInt(var,recebe);
 					}else{
-						separado = linha.split("#");
-						var = separado[1];
-						System.out.println("var nada "+var);
+						System.out.println("DEU PAU "+recebe);
 					}
-				return var;
+				}else{
+						System.out.println("var nada "+var);
+						mapaVariaveis.put(var,0);
+					}
 			}
 
 		}catch(ArrayIndexOutOfBoundsException erro){
 			System.out.println("Syntax Error - "+erro);
-			var="1";
-			return var;
 		}
-		return var;
+	}
+
+	public void stringToInt(String var, String valor){
+		try {
+			int i = Integer.parseInt(valor);
+			
+			mapaVariaveis.put(var,i);
+		} catch (NumberFormatException e) {
+			System.out.println("Numero com formato errado!");
+
+		}
 	}
 }

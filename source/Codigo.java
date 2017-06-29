@@ -6,8 +6,8 @@ public class Codigo{
     private Recursao pilhaRecursao = new Recursao();   //armazena a pilha de recursao
 
 
-	public String compara(String linha, int nLinhas){
-		String var="a",token,restoToken;
+	public void compara(String linha, int nLinhas){
+		String token,restoToken;
 		Variaveis variaveis = new Variaveis();
 
 		mapaLinhas.put(linha, nLinhas);
@@ -19,8 +19,7 @@ public class Codigo{
 			//cria variavel
 			case "#":
 				if(token.equals("#")){
-					var = variaveis.criaVar(linha);
-					return var;
+					variaveis.criaVar(linha);
 				}
 			break;
         
@@ -29,7 +28,6 @@ public class Codigo{
 				restoToken = linha.substring(1,5);
 				if(restoToken.equals("hile")){
 					System.out.println("while ");
-					return var;
 				}
                 //se a condição do while for verdadeira
                 //empilha a linha no while
@@ -62,8 +60,6 @@ public class Codigo{
 		/*if(linha.contains("=")){
 //			var = atribuicao(linha);
 		}*/
-		var = "a";
-		return var;
 	}
 	
 }
