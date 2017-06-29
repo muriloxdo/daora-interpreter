@@ -14,13 +14,15 @@ public class Codigo{
 		System.out.println("substring: "+token);
 
 		switch(token){
+			//cria variavel
 			case "#":
 				if(token.equals("#")){
 					var = variaveis.criaVar(linha);
 					return var;
 				}
 			break;
-
+        
+            //while
 			case "w":
 				restoToken = linha.substring(1,5);
 				if(restoToken.equals("hile")){
@@ -28,7 +30,8 @@ public class Codigo{
 					return var;
 				}
 			break;
-
+            
+            
 			case "i":
 
 			break;
