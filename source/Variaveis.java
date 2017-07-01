@@ -21,32 +21,54 @@ public class Variaveis{
     //recebe uma string com a expressão aritmética que deve ser resolvida. Ex: "a * b", "1 + b", "2 / 6".
     public Integer arithmeticExpression( String exp ){
         
-        String[] splitted = exp.split("[+-*/]");     //splita pelos símbolos possíveis
+        String[] separa, splitted;     
         int op1, op2;
+        String var;
 
+        var = exp;
+		separa = var.split("="); //pega a variavel
+		var = separa[0];
+		exp = separa[1];
+		System.out.println(exp);
+
+		splitted = exp.split("[+-*/]"); //splita pelos símbolos possíveis
+				
         //considerando que a expressão só pode ter dois operandos
         //você pode aumentar isso
- 
+ 		if(mapaVariaveis.containsKey(var)){ //ve se ela existe no map
         //pega o valor do primeiro operando
-        try{
-            op1 = mapaVariaveis.get(splitted[0]);
+	        try{
+	            op1 = mapaVariaveis.get(splitted[0]);
 
-        }catch(NullPointerException b){
+	        }catch(NullPointerException b){
 
-            try{
-                Integer.parseInt(splitted[0]);
+	            try{
+	                Integer.parseInt(splitted[0]);
 
-            }catch(NumberFormatException e){
-                System.out.println("indefined value of"+splitted[0]);              
-            }
-        }
+	            }catch(NumberFormatException e){
+	                System.out.println("indefined value of"+splitted[0]);              
+	            }
+	        }
+
+	        try{
+	            op2 = mapaVariaveis.get(splitted[0]);
+
+	        }catch(NullPointerException b){
+
+	            try{
+	                Integer.parseInt(splitted[0]);
+
+	            }catch(NumberFormatException e){
+	                System.out.println("indefined value of"+splitted[0]);              
+	            }
+	        }
 
         //falta fazer a mesma coisa para o operador 2 (op2)
-
+	    }
         //calcular o resultado da operação
 
         //retorna o resultado
-        return 0;
+        return 5;
 
     }
 
@@ -92,9 +114,11 @@ public class Variaveis{
 
 			int tst=mapaVariaveis.get(var);
 
+			System.out.println(mapaVariaveis.values());
+
 			System.out.println(tst);
 		} catch (NumberFormatException e) {
-			System.out.println("Numero com formato errado! "+e);
+			System.out.println("Number with incorrect format! "+e);
 
 		}
 	}

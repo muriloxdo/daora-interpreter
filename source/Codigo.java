@@ -54,6 +54,7 @@ public class Codigo{
 
 			default: /*ve se é uma variavel*/
 
+				variaveis.arithmeticExpression(linha);
 			break;
 		}
 
