@@ -31,19 +31,27 @@ public class Variaveis{
 		exp = separa[1];
 		System.out.println(exp);
 
-		splitted = exp.split("[+-*/]"); //splita pelos símbolos possíveis
+		splitted = exp.split("[+-/*]"); //splita pelos símbolos possíveis
 				
         //considerando que a expressão só pode ter dois operandos
         //você pode aumentar isso
+				System.out.println("num entro ainda");
+				System.out.println(mapaVariaveis.get(var));
+				System.out.println("Key: " + mapaVariaveis.getKey(var) + ". Value: " + mapaVariaveis.getValue(var));
+
  		if(mapaVariaveis.containsKey(var)){ //ve se ela existe no map
         //pega o valor do primeiro operando
+				System.out.println("introduziu");
+
 	        try{
 	            op1 = mapaVariaveis.get(splitted[0]);
+				System.out.println(op1);
 
 	        }catch(NullPointerException b){
 
 	            try{
 	                Integer.parseInt(splitted[0]);
+				System.out.println("deu ruim");
 
 	            }catch(NumberFormatException e){
 	                System.out.println("indefined value of"+splitted[0]);              
@@ -51,15 +59,17 @@ public class Variaveis{
 	        }
 
 	        try{
-	            op2 = mapaVariaveis.get(splitted[0]);
+	            op2 = mapaVariaveis.get(splitted[1]);
+				System.out.println(op2);
 
 	        }catch(NullPointerException b){
 
 	            try{
-	                Integer.parseInt(splitted[0]);
+	                Integer.parseInt(splitted[1]);
+				System.out.println("deu ruim");
 
 	            }catch(NumberFormatException e){
-	                System.out.println("indefined value of"+splitted[0]);              
+	                System.out.println("indefined value of"+splitted[1]);              
 	            }
 	        }
 
