@@ -2,7 +2,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Variaveis{
-	Map<String, Integer> mapaVariaveis = new TreeMap<String, Integer>();
+
+	private Map<String, Integer> mapaVariaveis;
 
 
 	/*
@@ -17,6 +18,10 @@ public class Variaveis{
     /*
     public atualiza(nome var, valor)
     */
+
+    public Variaveis(){
+        mapaVariaveis = new TreeMap<String, Integer>();
+    }
     
     //recebe uma string com a expressão aritmética que deve ser resolvida. Ex: "a * b", "1 + b", "2 / 6".
     public Integer arithmeticExpression( String exp ){
@@ -32,26 +37,25 @@ public class Variaveis{
 		System.out.println(exp);
 
 		splitted = exp.split("[+-/*]"); //splita pelos símbolos possíveis
+
+        System.out.println(splitted);
 				
         //considerando que a expressão só pode ter dois operandos
         //você pode aumentar isso
-				System.out.println("num entro ainda");
-				System.out.println(mapaVariaveis.get(var));
-				System.out.println("Key: " + mapaVariaveis.getKey(var) + ". Value: " + mapaVariaveis.getValue(var));
+	
+         //	System.out.println("var="+var);
+        //	System.out.println(mapaVariaveis.keySet());
+	    //	System.out.println("Key: " + mapaVariaveis.get(var) + ". Value: " + mapaVariaveis.get(var));
 
  		if(mapaVariaveis.containsKey(var)){ //ve se ela existe no map
         //pega o valor do primeiro operando
-				System.out.println("introduziu");
-
 	        try{
 	            op1 = mapaVariaveis.get(splitted[0]);
-				System.out.println(op1);
 
 	        }catch(NullPointerException b){
 
 	            try{
 	                Integer.parseInt(splitted[0]);
-				System.out.println("deu ruim");
 
 	            }catch(NumberFormatException e){
 	                System.out.println("indefined value of"+splitted[0]);              
@@ -60,13 +64,11 @@ public class Variaveis{
 
 	        try{
 	            op2 = mapaVariaveis.get(splitted[1]);
-				System.out.println(op2);
 
 	        }catch(NullPointerException b){
 
 	            try{
 	                Integer.parseInt(splitted[1]);
-				System.out.println("deu ruim");
 
 	            }catch(NumberFormatException e){
 	                System.out.println("indefined value of"+splitted[1]);              
@@ -77,8 +79,19 @@ public class Variaveis{
 	    }
         //calcular o resultado da operação
 
+        int result = 0;
+
+        /*switch (operador){
+            case '+': result = op1 + op2; break;
+            case '-': result = op1 - op2; break;
+            case '*': result = op1 * op2; break;
+            case '/': result = op1 / op2; break;
+            default: throws exception;
+        
+        }*/
+
         //retorna o resultado
-        return 5;
+        return result;
 
     }
 
@@ -122,11 +135,6 @@ public class Variaveis{
 			
 			mapaVariaveis.put(var,i);
 
-			int tst=mapaVariaveis.get(var);
-
-			System.out.println(mapaVariaveis.values());
-
-			System.out.println(tst);
 		} catch (NumberFormatException e) {
 			System.out.println("Number with incorrect format! "+e);
 
