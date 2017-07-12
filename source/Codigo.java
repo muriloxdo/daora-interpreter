@@ -4,11 +4,10 @@ import java.util.TreeMap;
 public class Codigo{
 	private Map<String, Integer> mapaLinhas = new TreeMap<String, Integer>(); //armazena todas as linhas (??)
     private Recursao pilhaRecursao = new Recursao();   //armazena a pilha de recursao
-
+    private Variaveis variaveis = new Variaveis();
 
 	public void compara(String linha, int nLinhas){
 		String token,restoToken;
-		Variaveis variaveis = new Variaveis();
 
 		mapaLinhas.put(linha, nLinhas);
 		token = linha.substring(0,1);
