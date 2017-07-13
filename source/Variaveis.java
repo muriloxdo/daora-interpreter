@@ -34,12 +34,9 @@ public class Variaveis{
 		separa = var.split("="); //pega a variavel
 		var = separa[0];
 		exp = separa[1];
-		System.out.println(exp);
 
 		splitted = exp.split("[+-/*]"); //splita pelos símbolos possíveis
 
-		System.out.println(splitted);
-				
 		//considerando que a expressão só pode ter dois operandos
 		//você pode aumentar isso
 	
@@ -75,7 +72,7 @@ public class Variaveis{
 			
 			}
 			
-			System.out.println("resultadoooooo "+result);
+			//System.out.println("resultadoooooo "+result);
 		}
 
 	}
@@ -93,7 +90,7 @@ public class Variaveis{
 					
 		}catch(NumberFormatException e){
 			System.out.println("indefined value of"+splitted[i]);              
-			return;
+
 			}
 		}
 
