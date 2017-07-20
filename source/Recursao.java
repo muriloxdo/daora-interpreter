@@ -24,7 +24,7 @@ public class Recursao{
 			switch (operador){
 				case "<":
 					if(comp(splitted,0,variaveis)<comp(splitted,1,variaveis)){
-						//pilhaIf.push
+						pilhaIf.push("t");
 					}else{
 						System.out.println("maior");
 					}
