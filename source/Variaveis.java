@@ -3,7 +3,7 @@ import java.util.TreeMap;
 
 public class Variaveis{
 
-	private Map<String, Integer> mapaVariaveis;
+	protected Map<String, Integer> mapaVariaveis;
 
 
 	/*
@@ -50,6 +50,9 @@ public class Variaveis{
 				operador="*";
 			else if(exp.contains("/"))
 				operador="/";
+			else{
+				operador="=";
+			}
 			
 			switch (operador){
 				case "+":
@@ -68,11 +71,17 @@ public class Variaveis{
 					result = calc(splitted,0)/calc(splitted,1);
 				break;
 
+				case "=":
+					result = calc(separa,1);
+				break;
+
 				//default: throws exception;
 			
 			}
-			
-			//System.out.println("resultadoooooo "+result);
+
+			mapaVariaveis.put(var, result);
+		}else{
+			System.out.println("\nVariable not found");
 		}
 
 	}
@@ -89,7 +98,7 @@ public class Variaveis{
 			op1 = Integer.parseInt(splitted[i]);
 					
 		}catch(NumberFormatException e){
-			System.out.println("indefined value of"+splitted[i]);              
+			System.out.println("indefined value of "+splitted[i]);              
 
 			}
 		}
